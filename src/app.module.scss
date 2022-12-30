@@ -1,0 +1,47 @@
+.logo {
+  height: 20px;
+  pointer-events: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  overflow: auto;
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 800px;
+  max-width: 800px;
+  margin: 10px;
+}
+
+.tableWrapper {
+  display: flex;
+
+  .tableLeft {
+    max-width: 70%;
+  }
+
+  .tableRight {
+    max-width: 30%;
+
+    th,
+    td {
+      background: #dcfbde !important;
+    }
+  }
+}
+
+.table {
+  th,
+  td {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+}

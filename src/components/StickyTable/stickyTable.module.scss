@@ -1,0 +1,27 @@
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background: #fff;
+}
+
+.container {
+  overflow: auto;
+}
+
+.table {
+  text-align: left;
+
+  th,
+  td {
+    min-width: 120px;
+    max-width: 120px;
+    padding: 10px;
+  }
+
+  th:nth-child(odd),
+  td:nth-child(odd) {
+    background: #eee;
+  }
+}
