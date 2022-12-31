@@ -1,5 +1,5 @@
 # Live Demo
-[https://imartintamayo.github.io/sticky-table-header-with-resize-detector/](Live)
+[Live Demo Link](https://imartintamayo.github.io/sticky-table-header-with-resize-detector/)
 
 # Getting Started with Create React App
 
