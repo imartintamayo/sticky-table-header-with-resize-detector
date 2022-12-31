@@ -1,3 +1,6 @@
+# Live Demo
+[https://imartintamayo.github.io/sticky-table-header-with-resize-detector/](Live)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
