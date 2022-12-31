@@ -1,8 +1,8 @@
-import { ReactNode, useCallback, useRef } from 'react';
-import ReactResizeDetector from 'react-resize-detector';
+import { ReactNode } from 'react';
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 import styles from './stickyTable.module.scss';
 import cx from 'clsx';
+import StickySection from './StickySection';
 
 type StickyTableProps = {
   renderHeaders: () => ReactNode;
@@ -19,32 +19,15 @@ const StickyTable: React.FC<StickyTableProps> = ({
   onHeaderHeightChange,
   headerHeight,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const onResize = useCallback(
-    (width?: number, height?: number) =>
-      height && onHeaderHeightChange && onHeaderHeightChange(height),
-    [onHeaderHeightChange]
-  );
-
   return (
     <ScrollSync>
       <div className={cx(styles.table, className)}>
-        <div ref={ref} className={styles.sticky}>
-          <ScrollSyncPane group="horizontal">
-            <div className={styles.container}>
-              <table style={{ height: headerHeight }}>
-                <thead>{renderHeaders()}</thead>
-              </table>
-            </div>
-          </ScrollSyncPane>
-          {onHeaderHeightChange && (
-            <ReactResizeDetector
-              onResize={onResize}
-              handleWidth={false}
-              targetRef={ref}
-            />
-          )}
-        </div>
+        <StickySection
+          renderHeaders={renderHeaders}
+          onHeaderHeightChange={onHeaderHeightChange}
+          headerHeight={headerHeight}
+        />
+
         <ScrollSyncPane group="horizontal">
           <div className={styles.container}>
             <table>
